@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineServer - Gestión de Servidores</title>
+    <!-- Vinculamos nuestro archivo CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Barra de Navegación -->
+    <header>
+        <div class="logo">CineServer</div>
+        <nav>
+            <a href="#" onclick="showView('home')">Inicio</a>
+            <a href="#" onclick="filterMovies('Fantasía')">Fantasía</a>
+            <a href="#" onclick="filterMovies('Ciencia Ficción')">Ciencia Ficción</a>
+            <a href="#" onclick="showView('live')">En Vivo</a>
+        </nav>
+    </header>
+
+    <!-- Contenedor Principal (SPA) -->
+    <main id="app-container">
+
+        <!-- VISTA 1: Catálogo Principal -->
+        <section id="catalog-view" class="view active">
+            <h1 id="catalog-title">Catálogo de Películas</h1>
+            <div class="movie-grid" id="movie-grid"></div>
+        </section>
+
+        <!-- VISTA 2: Detalles de la Película -->
+        <section id="detail-view" class="view">
+            <!-- Fondo de la película -->
+            <div class="detail-background" id="detail-background"></div>
+
+            <div class="detail-content">
+                <button class="back-btn" onclick="showView('home')">← Volver al catálogo</button>
+                <div class="detail-info">
+                    <img id="detail-poster" src="" alt="Poster de la película">
+                    <div class="detail-text">
+                        <h1 id="detail-title"></h1>
+                        <span id="detail-genre" class="badge"></span>
+                        <p id="detail-description"></p>
+                    </div>
+                </div>
+
+                <!-- Apartado de películas relacionadas -->
+                <div class="related-section">
+                    <h3>Películas Relacionadas</h3>
+                    <div class="movie-grid related-grid" id="related-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISTA 3: Apartado de En Vivo (Preparado para AzuraCast) -->
+        <section id="live-view" class="view">
+            <h1>Transmisión en Vivo</h1>
+            <p>Aquí integraremos el reproductor y el streaming del servidor en el futuro.</p>
+            <div class="live-player-placeholder">
+                <span class="live-indicator">● EN VIVO</span>
+                <p>Esperando conexión con AzuraCast...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Vinculamos nuestro archivo de JavaScript -->
+    <script src="src/data.js"></script>
+</body>
+
+</html>
